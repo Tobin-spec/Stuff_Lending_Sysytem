@@ -14,10 +14,10 @@ public class MemberRegistry {
    * The method which will add a member which also checks if 
    * the email and the phone number is unique.
    */
-  public void createMember(String name, String email, Integer number) {
+  public void createMember(String name, String email, String number) {
 
     for (Member m : memberList) {
-      if (!(m.getEmail().equals(email)) && !(m.getNumber() == number)) {
+      if (!(m.getEmail().equals(email)) && !(m.getNumber().equals(number))) {
         Member member = new Member(name, email, number);
         member.setDayOfCreation(today);
         memberList.add(member);
@@ -64,15 +64,23 @@ public class MemberRegistry {
   /**
    * Edit a member's phone number if the given number is unique.
    */
-  public String editMemberNumber(Member member, Integer number) {
+  public String editMemberNumber(Member member, String number) {
     String msg = "";
     for (Member m : memberList) {
-      if (m.getNumber() == number) {
+      if (m.getNumber().equals(number)) {
         msg = "Number already taken.";
       } else {
         member.setNumber(number);
         msg = "Phone number updated successfully.";
       }
+    }
+    return msg;
+  }
+
+  public String listAllMembers() {
+    String msg = "Name: ";
+    for (Member m : memberList) {
+      msg += m.getName() + " Email: " + m.getEmail() + " Phone Number: " + m.getNumber(); 
     }
     return msg;
   }

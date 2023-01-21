@@ -9,7 +9,7 @@ import java.util.UUID;
 public class Member {
   private String name;
   private String email;
-  private Integer phoneNumber;
+  private String phoneNumber;
   private String memberId;
   private ArrayList<Item> itemList = new ArrayList<Item>();
   private Integer dayOfCreation;
@@ -21,7 +21,7 @@ public class Member {
   /**
    * Class Constructor for memeber.
    */
-  public Member(String name, String email, Integer phoneNumber) {
+  public Member(String name, String email, String phoneNumber) {
     this.name = name;
     this.email = email;
     this.phoneNumber = phoneNumber;
@@ -48,11 +48,11 @@ public class Member {
     this.email = email;
   }
 
-  public Integer getNumber() {
+  public String getNumber() {
     return phoneNumber;
   }
 
-  public void setNumber(Integer phoneNumber) {
+  public void setNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 

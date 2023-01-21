@@ -11,10 +11,10 @@ public class App {
    */
   public static void main(String[] args) {
     // adapt to start the application in your way
-    model.Simple m = new model.Simple();
-    Simple c = new Simple();
-    view.Simple v = new view.Simple();
+    model.MemberRegistry m = new model.MemberRegistry();
+    MainMenu c = new MainMenu();
+    view.MainMenu v = new view.MainMenu();
 
-    c.doSomethingSimple(m, v);
+    c.controlMainMenu(m, v);
   }
 }
